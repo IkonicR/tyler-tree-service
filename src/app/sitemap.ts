@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { getSortedPostsData } from '@/lib/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://tylermotreeservice.com'
+    const baseUrl = 'https://tylertreeservice.com';
   
   // Core Pages
   const routes = [

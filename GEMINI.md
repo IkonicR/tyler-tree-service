@@ -1,18 +1,19 @@
-# Project Context: Joplin Tree Service (Rank & Rent Pilot)
+# Project Context: Tyler Tree Service (Rank & Rent Pilot)
 
 ## 1. Project Overview
-**Goal:** Create a high-performance, hyper-local lead generation website for tree services in Joplin, MO. This is a "Rank & Rent" digital real estate pilot.
-**Domain:** `joplinmotreeservice.com` (Purchased on Vercel)
-**Phone:** `(417) 238-1333` (GoHighLevel - Forwarded)
-**Strategy:** "Hub & Spoke" content architecture, maximizing local relevance (e.g., specific city ordinances, local pricing) and technical speed (100/100 Lighthouse).
-**Current Status:** Development phase. Basic pages (Hero, Services) are being built.
+**Goal:** Create a high-performance, hyper-local lead generation website for tree services in Tyler, TX. This is a "Rank & Rent" digital real estate pilot.
+**Domain:** `tylertreeservice.com` (Target / Placeholder)
+**Phone:** `(903) 555-0123` (Placeholder - User to Acquire)
+**Strategy:** "Hub & Spoke" content architecture, maximizing local relevance (e.g., Piney Woods ecosystem, Tyler ordinances) and technical speed (100/100 Lighthouse).
+**Current Status:** Deployment phase. Site is live on Vercel (Production).
 
 ## 2. User Preferences & Critical Rules
-*   **Persona:** "Vibe Coder." The user understands high-level concepts (SEO, AI, Architecture) but relies on the agent for technical implementation (syntax, code structure).
-*   **Deployment:** **STRICTLY FORBIDDEN** to deploy to Vercel or run build commands that trigger external deployments without explicit, written confirmation from the user.
+*   **Persona:** "Vibe Coder." The user understands high-level concepts (SEO, AI, Architecture) but relies on the agent for technical implementation.
+*   **Deployment:** Vercel deployments are authorized.
 *   **Content Constraints:**
-    *   **NO Fireplaces:** The service does not offer firewood or fireplace services. Remove/avoid all references.
-    *   **Local Only:** Content must remain hyper-specific to Joplin, MO and surrounding areas (Jasper/Newton counties).
+    *   **Pine Country:** Focus on Loblolly Pines and Shortleaf Pines, not just Oaks.
+    *   **Local Only:** Content must remain hyper-specific to Tyler, TX and Smith County.
+    *   **Safety First:** Emphasize "Zero-Impact" removal and "Licensed & Insured."
 *   **Interaction Style:** Explain *why* technical choices are made, but handle the *how* autonomously. Keep the "To-Do" list updated religiously.
 
 ## 3. Tech Stack & Architecture
@@ -26,11 +27,11 @@
 
 ## 4. Key Files & Directories
 *   `src/app/`: Main application routes (Home, Services, Blog).
-    *   `layout.tsx`: Root layout with Metadata and Google Analytics (`G-P1D65SCQDD`).
+    *   `layout.tsx`: Root layout with Metadata and Google Analytics.
 *   `src/components/`: Reusable UI components (Navbar, Footer, Shadcn UI).
 *   `src/content/blog/`: Markdown files for the "Knowledge Moat" (SEO articles).
 *   `src/lib/constants.ts`: Global project variables (Phone, Service areas).
-*   `Master_SEO_Design_Blueprint.md`: The strategic "Bible" for this project. Refer to this for content and design decisions.
+*   `Tyler_SEO_Strategy.md`: The strategic "Bible" for this project.
 
 ## 5. Development Workflow
 *   **Start Server:** `npm run dev` (Runs on http://localhost:3000)
@@ -38,7 +39,7 @@
 *   **Lint:** `npm run lint`
 
 ## 6. Current SEO Hooks (Do Not Forget)
-*   **Ordinance:** City of Joplin Ordinance No. 2008-212 (Hazardous trees).
-*   **Pricing:** Small trees ($250-$550), Large Oaks ($1,100-$1,800).
-*   **Threats:** Oak Wilt, Emerald Ash Borer.
-*   **Service Area:** Joplin, Webb City, Carl Junction, Carterville, Oronogo.
+*   **Ordinance:** City of Tyler Tree Preservation Ordinance (Chapter 19).
+*   **Pricing:** Small trees ($300-$600), Large Pines/Oaks ($1,200+).
+*   **Threats:** Pine Bark Beetles, Hypoxylon Canker.
+*   **Service Area:** Tyler, Whitehouse, Lindale, Bullard, Flint, Chapel Hill.

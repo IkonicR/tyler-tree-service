@@ -5,6 +5,7 @@ import { Footer } from '@/components/footer';
 import { getPostData, getSortedPostsData } from '@/lib/blog';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Calendar, User } from 'lucide-react';
+import { SITE_DOMAIN } from '@/lib/constants';
 
 export async function generateStaticParams() {
   const posts = getSortedPostsData();
@@ -34,7 +35,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
-    image: post.image ? [`https://tylermotreeservice.com${post.image}`] : [],
+    image: post.image ? [`https://${SITE_DOMAIN}${post.image}`] : [],
     datePublished: post.date,
     author: {
       '@type': 'Person',
