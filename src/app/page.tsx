@@ -18,16 +18,16 @@ import { Footer } from "@/components/footer";
 import { QuoteForm } from "@/components/quote-form";
 import { JsonLd } from "@/components/json-ld";
 import { Phone, CheckCircle2, ArrowRight, Star, ShieldCheck, MapPin, Clock, Trees } from "lucide-react";
-import { PHONE_NUMBER, PHONE_HREF, COMPANY_NAME, ADDRESS } from "@/lib/constants";
+import { PHONE_NUMBER, PHONE_HREF, COMPANY_NAME, ADDRESS, TYLER_ZIP_CODES, SURROUNDING_CITIES } from "@/lib/constants";
 import { WithContext, LocalBusiness } from "schema-dts";
 
 const businessSchema: any = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "TreeService", // More specific than LocalBusiness
+      "@type": "TreeService",
       "name": COMPANY_NAME,
-      "image": "https://tylertreeservice.com/assets/tyler-tree-hero-main.jpg",
+      "image": "https://tylertreeremoval.com/assets/tyler-tree-hero-main.jpg",
       "telephone": PHONE_NUMBER,
       "address": {
         "@type": "PostalAddress",
@@ -41,7 +41,7 @@ const businessSchema: any = {
         "latitude": 32.3513,
         "longitude": -95.3011
       },
-      "url": "https://tylertreeservice.com",
+      "url": "https://tylertreeremoval.com",
       "priceRange": "$$",
       "openingHoursSpecification": [
         {
@@ -53,10 +53,7 @@ const businessSchema: any = {
       ],
       "areaServed": [
         { "@type": "City", "name": "Tyler" },
-        { "@type": "City", "name": "Whitehouse" },
-        { "@type": "City", "name": "Lindale" },
-        { "@type": "City", "name": "Flint" },
-        { "@type": "City", "name": "Bullard" }
+        ...SURROUNDING_CITIES.map(city => ({ "@type": "City", "name": city }))
       ]
     },
     {
@@ -396,7 +393,7 @@ export default function Home() {
                     <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-none">ROOTED IN <br /> TYLER SOIL</h2>
                  </div>
                  <p className="text-xl text-stone-400 leading-relaxed">
-                    Tyler isn't just any territory. The iron-rich soil of Smith County and the Piney Woods landscape present unique challenges. From the historic properties in the <strong>Azalea District</strong> to the towering pines of <strong>Hollytree</strong>, we understand the specific care your trees need to survive our storms.
+                    Tyler isn't just any territory. The iron-rich soil of Smith County and the Piney Woods landscape present unique challenges. From the historic properties in the <strong>Azalea District</strong> to the towering pines of <strong>Hollytree</strong> and the new developments in <strong>The Woods</strong>, we understand the specific care your trees need.
                  </p>
               </div>
               
@@ -409,12 +406,12 @@ export default function Home() {
                  {/* Card 2 */}
                  <div className="p-8 border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
                     <h3 className="font-bold text-xl text-green-400 mb-3">Zero-Impact Rigging</h3>
-                    <p className="text-stone-400 text-sm leading-relaxed">We know how to navigate the tight estates of South Tyler without damaging your manicured lawn or irrigation systems.</p>
+                    <p className="text-stone-400 text-sm leading-relaxed">We know how to navigate the tight estates of South Tyler, like <strong>Cascades Estates</strong>, without damaging your manicured lawn.</p>
                  </div>
                  {/* Card 3 */}
                  <div className="p-8 border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
                     <h3 className="font-bold text-xl text-green-400 mb-3">Beetle Prevention</h3>
-                    <p className="text-stone-400 text-sm leading-relaxed">We sterilize our tools and seal cuts to prevent the spread of Pine Bark Beetles and Hypoxylon Canker, rampant in East Texas.</p>
+                    <p className="text-stone-400 text-sm leading-relaxed">We sterilize our tools to prevent the spread of Pine Bark Beetles and Hypoxylon Canker, which are rampant in <strong>Faulkner Park</strong> and surrounding areas.</p>
                  </div>
               </div>
            </div>
@@ -463,7 +460,7 @@ export default function Home() {
                  <AccordionItem value="item-6" className="border-b-stone-200">
                     <AccordionTrigger className="text-lg font-bold text-stone-900 hover:text-green-800 text-left">Do you service areas outside of Tyler?</AccordionTrigger>
                     <AccordionContent className="text-stone-600 text-base leading-relaxed p-4 bg-stone-50">
-                       Yes! We serve all of Jasper and Newton counties. This includes Whitehouse, Lindale, Flint, Bullard, Duquesne, and Neosho.
+                       Yes! We serve all of Smith County and East Texas. This includes Whitehouse, Lindale, Flint, Bullard, Chapel Hill, and Noonday.
                     </AccordionContent>
                  </AccordionItem>
 

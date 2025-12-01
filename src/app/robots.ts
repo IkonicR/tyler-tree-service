@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://tylermotreeservice.com/sitemap.xml',
+    sitemap: 'https://tylertreeremoval.com/sitemap.xml',
   }
 }

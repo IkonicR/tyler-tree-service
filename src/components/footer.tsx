@@ -53,9 +53,9 @@ export function Footer() {
             <li><Link href="/service-areas/lindale" className="hover:text-green-400 transition-colors">Lindale</Link></li>
             <li><Link href="/service-areas/flint" className="hover:text-green-400 transition-colors">Flint</Link></li>
             <li><Link href="/service-areas/bullard" className="hover:text-green-400 transition-colors">Bullard</Link></li>
-            <li><span className="hover:text-stone-200 cursor-default opacity-50">Chapel Hill (Coming Soon)</span></li>
-            <li><span className="hover:text-stone-200 cursor-default opacity-50">Noonday (Coming Soon)</span></li>
-            <li><span className="hover:text-stone-200 cursor-default opacity-50">Hideaway (Coming Soon)</span></li>
+            <li><Link href="/service-areas/chapel-hill" className="hover:text-green-400 transition-colors">Chapel Hill</Link></li>
+            <li><Link href="/service-areas/noonday" className="hover:text-green-400 transition-colors">Noonday</Link></li>
+            <li><Link href="/service-areas/chandler" className="hover:text-green-400 transition-colors">Chandler</Link></li>
           </ul>
         </div>
 

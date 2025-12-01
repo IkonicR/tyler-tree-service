@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { getSortedPostsData } from '@/lib/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://tylertreeservice.com';
+    const baseUrl = 'https://tylertreeremoval.com';
   
   // Core Pages
   const routes = [
@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // Dynamic Service Area Pages
-  const cities = ['webb-city', 'carl-junction', 'carterville', 'oronogo']
+  const cities = ['whitehouse', 'lindale', 'bullard', 'flint', 'chapel-hill', 'noonday', 'chandler']
   const cityRoutes = cities.map((city) => ({
     url: `${baseUrl}/service-areas/${city}`,
     lastModified: new Date(),

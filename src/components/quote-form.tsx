@@ -78,7 +78,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
 
       <div className="space-y-2">
         <label htmlFor="phone" className="text-sm font-bold text-stone-700 uppercase">Phone Number</label>
-          <Input placeholder="(903) 555-0123" {...field} />
+          <Input id="phone" name="phone" required placeholder="(903) 282-4323" />
       </div>
 
       <div className="grid grid-cols-2 gap-4">

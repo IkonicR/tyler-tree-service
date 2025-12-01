@@ -15,6 +15,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/tree-removal',
   },
+  openGraph: {
+    title: 'Tree Removal Tyler, TX | Expert Takedowns & Crane Service',
+    description: 'Safe, licensed tree removal in Tyler, TX. We handle hazardous pines, oaks near houses, and complex rigging. Free estimates.',
+    url: 'https://tylertreeremoval.com/tree-removal',
+    siteName: 'Tyler Tree Service',
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function TreeRemovalPage() {

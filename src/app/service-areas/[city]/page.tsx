@@ -35,6 +35,24 @@ const CITIES = {
     description: 'Rural and residential tree services for Flint. Large lot clearing, hazardous removals near Lake Palestine, and fence-line trimming.',
     landmarks: ['The Villages Resort', 'Lake Palestine', 'FM 2493'],
   },
+  'chapel-hill': {
+    name: 'Chapel Hill',
+    zip: '75707',
+    description: 'Serving the rolling hills of Chapel Hill. We provide land clearing and pine management for large acreage properties.',
+    landmarks: ['Chapel Hill High School', 'Highway 64 East'],
+  },
+  'noonday': {
+    name: 'Noonday',
+    zip: '75762',
+    description: 'Local tree experts for Noonday. Fast response for storm damage and regular oak maintenance.',
+    landmarks: ['Noonday City Hall', 'Highway 155'],
+  },
+  'chandler': {
+    name: 'Chandler',
+    zip: '75758',
+    description: 'Tree services for the gateway to Lake Palestine. We handle lakeside tree safety and trimming.',
+    landmarks: ['Winchester Park', 'Lake Palestine'],
+  },
 };
 
 type Props = {

@@ -2,8 +2,13 @@
 
 ## 1. Project Overview
 **Goal:** Create a high-performance, hyper-local lead generation website for tree services in Tyler, TX. This is a "Rank & Rent" digital real estate pilot.
-**Domain:** `tylertreeservice.com` (Target / Placeholder)
-**Phone:** `(903) 555-0123` (Placeholder - User to Acquire)
+**Domain:** `tylertreeremoval.com` (Purchased)
+**Phone:** `(903) 282-4323` (Purchased)
+**Tracking:**
+*   **GTM:** `GTM-PQJL3LMM` (Container Installed)
+*   **GA4:** `G-BK1TM9DBYG` (Analytics Property)
+*   **Supabase URL:** `https://sagjrsjocoojpxjuxlwz.supabase.co`
+*   **Supabase Key:** `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...` (See .env.local)
 **Strategy:** "Hub & Spoke" content architecture, maximizing local relevance (e.g., Piney Woods ecosystem, Tyler ordinances) and technical speed (100/100 Lighthouse).
 **Current Status:** Deployment phase. Site is live on Vercel (Production).
 

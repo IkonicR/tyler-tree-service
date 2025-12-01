@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ChatWidget } from "@/components/chat-widget";
@@ -28,11 +28,15 @@ export const metadata: Metadata = {
     "Stump Grinding Tyler",
     "Arborist Tyler TX",
     "Emergency Tree Service",
+    "Tree Trimming Smith County",
+    "Pine Tree Removal East Texas",
+    "75703 Tree Service",
+    "Azalea District Tree Care",
   ],
   authors: [{ name: "Tyler Tree Service Team" }],
   creator: "Tyler Tree Service",
   publisher: "Tyler Tree Service",
-  metadataBase: new URL("https://tylertreeservice.com"),
+  metadataBase: new URL("https://tylertreeremoval.com"),
   alternates: {
     canonical: "/",
   },
@@ -40,7 +44,7 @@ export const metadata: Metadata = {
     title: "Tyler Tree Service | Fast & Affordable Tree Care",
     description:
       "Expert tree removal and trimming in Tyler, TX. 24/7 Emergency response. Licensed and Insured. Call for a free estimate.",
-    url: "https://tylertreeservice.com",
+    url: "https://tylertreeremoval.com",
     siteName: "Tyler Tree Service",
     locale: "en_US",
     type: "website",
@@ -70,7 +74,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleAnalytics gaId="G-P1D65SCQDD" />
+      <GoogleTagManager gtmId="GTM-PQJL3LMM" />
+      <GoogleAnalytics gaId="G-BK1TM9DBYG" />
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -78,6 +83,14 @@ export default function RootLayout({
           geistMono.variable
         )}
       >
+        <noscript>
+          <iframe 
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PQJL3LMM"
+            height="0" 
+            width="0" 
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         {children}
         <ChatWidget />
       </body>
