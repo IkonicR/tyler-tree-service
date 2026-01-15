@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Loader2, Send } from 'lucide-react'
 import { SITE_DOMAIN } from '@/lib/constants'
 import { cn } from '@/lib/utils'
+import { trackFormSubmission } from '@/lib/analytics'
 
 export function QuoteForm({ compact = false }: { compact?: boolean }) {
   const [loading, setLoading] = useState(false)
@@ -17,7 +18,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
-    
+
     const formData = new FormData(e.currentTarget)
     const supabase = createClient()
 
@@ -44,6 +45,8 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
       console.error('Error submitting lead:', error)
       alert('Something went wrong. Please try calling us instead.')
     } else {
+      // Track successful form submission
+      trackFormSubmission(service, urgency)
       setSuccess(true)
     }
   }
@@ -70,7 +73,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
           <p className="text-stone-600 text-sm">Fast response. Zero obligation.</p>
         </div>
       )}
-      
+
       <div className="space-y-2">
         <label htmlFor="name" className="text-sm font-bold text-stone-700 uppercase">Name</label>
         <Input id="name" name="name" required placeholder="John Doe" className="bg-stone-50 border-stone-300" />
@@ -78,48 +81,48 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
 
       <div className="space-y-2">
         <label htmlFor="phone" className="text-sm font-bold text-stone-700 uppercase">Phone Number</label>
-          <Input id="phone" name="phone" required placeholder="(903) 282-4323" />
+        <Input id="phone" name="phone" required placeholder="(903) 282-4323" />
       </div>
 
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-2">
-           <label className="text-sm font-bold text-stone-700 uppercase">Service</label>
-           <Select name="service" required>
-              <SelectTrigger className="bg-stone-50 border-stone-300">
-                 <SelectValue placeholder="Select..." />
-              </SelectTrigger>
-              <SelectContent>
-                 <SelectItem value="Tree Removal">Tree Removal</SelectItem>
-                 <SelectItem value="Tree Trimming">Trimming</SelectItem>
-                 <SelectItem value="Stump Grinding">Stump Grinding</SelectItem>
-                 <SelectItem value="Storm Damage">Storm Damage</SelectItem>
-                 <SelectItem value="Land Clearing">Land Clearing</SelectItem>
-                 <SelectItem value="Other">Other</SelectItem>
-              </SelectContent>
-           </Select>
+          <label className="text-sm font-bold text-stone-700 uppercase">Service</label>
+          <Select name="service" required>
+            <SelectTrigger className="bg-stone-50 border-stone-300">
+              <SelectValue placeholder="Select..." />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Tree Removal">Tree Removal</SelectItem>
+              <SelectItem value="Tree Trimming">Trimming</SelectItem>
+              <SelectItem value="Stump Grinding">Stump Grinding</SelectItem>
+              <SelectItem value="Storm Damage">Storm Damage</SelectItem>
+              <SelectItem value="Land Clearing">Land Clearing</SelectItem>
+              <SelectItem value="Other">Other</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
 
         <div className="space-y-2">
-           <label className="text-sm font-bold text-stone-700 uppercase">Urgency</label>
-           <Select name="urgency" required defaultValue="This Week">
-              <SelectTrigger className="bg-stone-50 border-stone-300">
-                 <SelectValue placeholder="Select..." />
-              </SelectTrigger>
-              <SelectContent>
-                 <SelectItem value="Emergency">Emergency (Now)</SelectItem>
-                 <SelectItem value="This Week">This Week</SelectItem>
-                 <SelectItem value="Planning">Just Planning</SelectItem>
-              </SelectContent>
-           </Select>
+          <label className="text-sm font-bold text-stone-700 uppercase">Urgency</label>
+          <Select name="urgency" required defaultValue="This Week">
+            <SelectTrigger className="bg-stone-50 border-stone-300">
+              <SelectValue placeholder="Select..." />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Emergency">Emergency (Now)</SelectItem>
+              <SelectItem value="This Week">This Week</SelectItem>
+              <SelectItem value="Planning">Just Planning</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
       </div>
 
       <div className="space-y-2">
         <label htmlFor="details" className="text-sm font-bold text-stone-700 uppercase">Details</label>
-        <Textarea 
-          id="details" 
-          name="details" 
-          placeholder="Tell us about the tree..." 
+        <Textarea
+          id="details"
+          name="details"
+          placeholder="Tell us about the tree..."
           className="bg-stone-50 border-stone-300 min-h-[80px]"
         />
       </div>
@@ -127,7 +130,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
       <Button type="submit" disabled={loading} className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold uppercase tracking-wider h-12">
         {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Get My Free Quote'}
       </Button>
-      
+
       <p className="text-xs text-stone-400 text-center pt-2">
         Your information is secure. We never share your data.
       </p>

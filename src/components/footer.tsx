@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Trees, Phone, Mail, MapPin, Facebook, Instagram, ShieldCheck } from "lucide-react";
-import { COMPANY_NAME, PHONE_NUMBER, PHONE_HREF, ADDRESS, SERVICE_AREA } from "@/lib/constants";
+import { COMPANY_NAME, PHONE_NUMBER, ADDRESS, SERVICE_AREA } from "@/lib/constants";
+import { TrackedPhoneAnchor } from "@/components/tracked-phone-link";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,7 +14,7 @@ export function Footer() {
         <div className="lg:col-span-1 space-y-6">
           <div className="flex items-center gap-3">
             <div className="bg-green-700 p-2 rounded-sm">
-               <Trees className="h-6 w-6 text-white" />
+              <Trees className="h-6 w-6 text-white" />
             </div>
             <span className="font-black text-2xl text-white tracking-tight uppercase">{COMPANY_NAME}</span>
           </div>
@@ -67,12 +68,12 @@ export function Footer() {
               <Phone className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
               <div>
                 <div className="text-xs uppercase font-bold text-stone-500 mb-1">Emergency Line</div>
-                <a href={PHONE_HREF} className="text-xl font-bold text-white hover:text-green-400 transition-colors block">{PHONE_NUMBER}</a>
+                <TrackedPhoneAnchor location="footer" className="text-xl font-bold text-white hover:text-green-400 transition-colors block">{PHONE_NUMBER}</TrackedPhoneAnchor>
               </div>
             </li>
             <li className="flex items-start gap-4">
               <MapPin className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
-              <span className="leading-relaxed text-stone-400">{ADDRESS} <br/> Smith County</span>
+              <span className="leading-relaxed text-stone-400">{ADDRESS} <br /> Smith County</span>
             </li>
           </ul>
         </div>
@@ -82,12 +83,12 @@ export function Footer() {
       <div className="bg-stone-950 py-8 border-t border-white/5">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stone-500">
           <div className="flex items-center gap-6">
-             <div className="flex items-center gap-2 text-green-700">
-                <ShieldCheck className="w-4 h-4" />
-                <span>Licensed & Insured</span>
-             </div>
-             <span>|</span>
-             <span>Tyler Tree Ordinance Compliant</span>
+            <div className="flex items-center gap-2 text-green-700">
+              <ShieldCheck className="w-4 h-4" />
+              <span>Licensed & Insured</span>
+            </div>
+            <span>|</span>
+            <span>Tyler Tree Ordinance Compliant</span>
           </div>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="hover:text-stone-300">Privacy Policy</Link>
