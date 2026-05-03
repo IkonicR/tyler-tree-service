@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ChatWidget } from "@/components/chat-widget";
@@ -75,7 +75,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleTagManager gtmId="GTM-PQJL3LMM" />
-      <GoogleAnalytics gaId="G-BK1TM9DBYG" />
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
